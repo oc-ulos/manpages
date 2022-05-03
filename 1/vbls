@@ -11,7 +11,7 @@ VBLS(1)\ctULOS 2 Manual
 \i1\byvbls\bn is a fairly simple shell written in Lua.  It is theoretically saner than GNU Bash.  Its syntax is somewhat more forgiving.
 
 \h1SYNTAX
-\i1In its basic syntax \byvbls\bn is very similar to Bash.  Most simple command pipelines translate directly between the two; the primary difference is that \byvbls\bn does not support job control, so single instances of the \by&\bn character have no special meaning.
+\i1In its basic syntax \byvbls\bn is very similar to Bash.  Most simple command pipelines translate directly between the two; the primary difference is that \byvbls\bn does not support job control, so single instances of the \by&\bn character have no special meaning.  There is no operator precedence for \by&&\bn and \by||\bn.
 
 \i1Comments in Bash and in \byvbls\bn are exactly the same: starting with a \by#\bn and continuing to the end of the line.
 
@@ -28,4 +28,4 @@ VBLS(1)\ctULOS 2 Manual
 \i3\sb# do something
 \i2\syend\sd
 
-\i1\byfor\bn loops MUST take the form \syfor \scvariable\sy in \sctokens ...\sy do\sd ...
+\i1\byfor\bn-loop declarations must take the form \syfor \scvariable\sy in \sctokens ...\sy do\sd.
