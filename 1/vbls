@@ -1,0 +1,31 @@
+VBLS(1)\ctULOS 2 Manual
+
+\h1NAME
+\i1vbls - the Vaguely Bourne-Like Shell
+
+\h1SYNOPSIS
+\i1\byvbls\bn
+\i1\byvbls\bn [\scoptions\sd] [\syscript\sd [\sgarguments\sd]]
+
+\h1DESCRIPTION
+\i1\byvbls\bn is a fairly simple shell written in Lua.  It is theoretically saner than GNU Bash.  Its syntax is somewhat more forgiving.
+
+\h1SYNTAX
+\i1In its basic syntax \byvbls\bn is very similar to Bash.  Most simple command pipelines translate directly between the two; the primary difference is that \byvbls\bn does not support job control, so single instances of the \by&\bn character have no special meaning.
+
+\i1Comments in Bash and in \byvbls\bn are exactly the same: starting with a \by#\bn and continuing to the end of the line.
+
+\i1\h2Flow Control
+\i1\byvbls\bn differs most greatly from Bash in its implementation of programming constructs.  Usually the difference is a lack of semicolons:  where in Bash an \byif\bn statement takes the form:
+
+\i2\syif \sccommand\sy; then
+\i3\sb# do something
+\i2\syfi\sd
+
+\i1...that same condition looks like this in \byvbls\bn.
+
+\i2\syif \sccommand \sythen
+\i3\sb# do something
+\i2\syend\sd
+
+\i1\byfor\bn loops MUST take the form \syfor \scvariable\sy in \sctokens ...\sy do\sd ...
